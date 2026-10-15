@@ -45,8 +45,8 @@ Smaller models tend to stall on multi-step builds; if the agent loops or gives u
 
 ```bash
 mkdir workbench-stack && cd workbench-stack
-git clone <url-of-workbench>          workbench
-git clone <url-of-workbench-sandbox>  workbench-sandbox
+git clone https://github.com/jayrcaraan/workbench.git          workbench
+git clone https://github.com/jayrcaraan/workbench-sandbox.git  workbench-sandbox
 ```
 
 ## 2. Start the cluster

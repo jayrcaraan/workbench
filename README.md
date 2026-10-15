@@ -167,7 +167,7 @@ tests/          unit tests (no cluster, no model)
 
 ## Related
 
-[`workbench-sandbox`](../workbench-sandbox) is the other half: the MCP server that creates isolated runtimes,
+[`workbench-sandbox`](https://github.com/jayrcaraan/workbench-sandbox) is the other half: the MCP server that creates isolated runtimes,
 hosts the apps and keeps the durable home.
 
 ## License
