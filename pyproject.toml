@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "workbench"
+version = "0.2.0"
+description = "Workbench: an agent that builds the frame, hosts the app, and steps aside while people fill it in"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "httpx>=0.28",
+    "pydantic>=2.10",
+    "pydantic-settings>=2.6",
+    "deepagents>=0.2",
+    "langchain>=1.0",
+    "langchain-openai>=1.0",
+    "langgraph>=1.0",
+    "langchain-mcp-adapters>=0.1.9",
+    "ag-ui-langgraph>=0.0.40",
+    "copilotkit>=0.1.90",
+    "langgraph-checkpoint-sqlite>=3.1.2",
+    "aiosqlite>=0.22.1",
+]
+
+[project.scripts]
+sandbox-agent = "sandbox_agent.api.app:serve"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sandbox_agent"]
+
+[dependency-groups]
+dev = [
+    "duckdb>=1.5.6",
+    "pytest>=8",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["live: needs the real MCP server and the model endpoint (deselected by default)"]
+addopts = "-m 'not live'"
+
+[tool.uv]
+package = true

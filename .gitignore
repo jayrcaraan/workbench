@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+.next/
+out/
+.DS_Store
+*.duckdb
+*.duckdb.wal
+.env
+.env.local
+.databricks_key
+
+e2e-output/
+frontend/e2e/*.png
+tsconfig.tsbuildinfo
+data/
+
+# local secrets
+.llm_key
+*_key
